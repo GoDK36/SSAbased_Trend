@@ -56,4 +56,7 @@ pol_df = pd.DataFrame({'date' : date_lst,
     + scale_x_datetime(breaks=date_breaks('10 weeks')) #스트링 안에 주기를 설정하여 출력가능
     + xlab('date')
     + ylab('Sentiment')
+    # +평균치 그리는 그래프
 )
+
+##csv파일로 출력
