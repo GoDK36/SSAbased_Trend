@@ -46,17 +46,24 @@ pol_df = pd.DataFrame({'date' : date_lst,
                       'Positive' : pos_lst,
                       'Negative' : neg_lst})
 
+# pol_lst = pol_df.values.tolist() #전체 데이타프레임 list화
+
 ##그래프 그리기
-(
+pol_graph = (
     ggplot(pol_df)
-    + geom_point(aes(x='date', y='Positive'),color='skyblue',alpha=0.4) #alpha는 투명도 0부터1까지
-    + geom_line(aes(x='date', y='Positive'),color='skyblue',alpha=0.4,group=1)
-    + geom_point(aes(x='date', y='Negative'),color='red',alpha=0.4)
-    + geom_line(aes(x='date', y='Negative'),color='red',alpha=0.4,group=2)
+    + geom_point(aes(x='date', y='Positive'),color='blue',alpha=0.5) #alpha는 투명도 0부터1까지
+    + geom_line(aes(x='date', y='Positive'),color='blue',alpha=0.5,group=1)
+    + geom_point(aes(x='date', y='Negative'),color='red',alpha=0.5)
+    + geom_line(aes(x='date', y='Negative'),color='red',alpha=0.5,group=2)
     + scale_x_datetime(breaks=date_breaks('10 weeks')) #스트링 안에 주기를 설정하여 출력가능
     + xlab('date')
     + ylab('Sentiment')
-    # +평균치 그리는 그래프
+    + geom_smooth(aes(x='date', y='Positive'),color='blue',method='lm',se=False) #평균 선 그리기
+    + geom_smooth(aes(x='date', y='Negative'),color='red',method='lm',se=False) #평균 선 그리기
 )
+print(pol_graph)
 
 ##csv파일로 출력
+pol_df.to_csv(r'E:\Programming\python\창회선배스터디\SSAbasedTrend\result.csv')
+
+os.startfile(r'E:\Programming\python\창회선배스터디\SSAbasedTrend\result.csv')
