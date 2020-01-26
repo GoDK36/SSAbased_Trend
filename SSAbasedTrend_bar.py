@@ -7,8 +7,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 import datetime as dt
 
-data = list(csv.reader(open(r'F:\Programming\python\창회선배스터디\SSAbasedTrend\1-SO-SSAbasedTrend-InputSample.t.csv', 'r', encoding='cp949')))[1:]
-pol_data = pd.read_csv(r'F:\Programming\python\창회선배스터디\SSAbasedTrend\1-SO-SSAbasedTrend-InputSample.t.csv', names=['date','pol'])[1:]
+data = list(csv.reader(open(r'G:\Programming\python\창회선배스터디\SSAbasedTrend\1-SO-SSAbasedTrend-InputSample.t.csv', 'r', encoding='cp949')))[1:]
+pol_data = pd.read_csv(r'G:\Programming\python\창회선배스터디\SSAbasedTrend\1-SO-SSAbasedTrend-InputSample.t.csv', names=['date','pol'])[1:]
 
 #data의 논항들 리스트화
 pv = list(set(pol_data.pol.tolist())) 
