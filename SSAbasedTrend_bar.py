@@ -76,7 +76,7 @@ plt.title('')
 
 plt.show()
 
-# ##csv파일로 출력
-# pol_df.to_csv(r'F:\Programming\python\창회선배스터디\SSAbasedTrend\result.csv')
+##csv파일로 출력
+pol_df.to_csv(r'F:\Programming\python\창회선배스터디\SSAbasedTrend\result.csv')
 
-# os.startfile(r'F:\Programming\python\창회선배스터디\SSAbasedTrend\result.csv')
+os.startfile(r'F:\Programming\python\창회선배스터디\SSAbasedTrend\result.csv')
